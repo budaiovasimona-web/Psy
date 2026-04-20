@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="O webe Svet Psov – prečo sme vznikli a čo ponúkame" />
+  <title>O nás | Svet Psov</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR (rovnaká na všetkých stránkach) ===== -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="hlavna-nav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-heart-fill me-1"></i>Svet Psov
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Domov</a></li>
+          <li class="nav-item"><a class="nav-link active" href="o-nas.html">O nás</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+          <li class="nav-item">
+            <button class="btn btn-outline-secondary btn-sm ms-2" id="dark-mode-btn">
+              <i class="bi bi-moon-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ===== KONIEC NAVBAR ===== -->
+
+
+  <main>
+
+    <!-- ===== HLAVIČKA STRÁNKY ===== -->
+    <section class="page-header text-white py-5 text-center">
+      <div class="container">
+        <!-- Nadpis a perex – o čom stránka je -->
+        <h1 class="sekcia-nadpis text-white">O nás</h1>
+        <p class="lead">
+          Svet Psov vznikol z lásky k štvornohým priateľom. Naším cieľom je poskytnúť
+          majiteľom psov spoľahlivé informácie na jednom mieste.
+        </p>
+      </div>
+    </section>
+    <!-- ===== KONIEC HLAVIČKY ===== -->
+
+
+    <!-- ===== HLAVNÝ TEXT ===== -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+
+            <p>
+              Náš web vznikol v roku 2023, keď skupina nadšených majiteľov psov zistila,
+              že spoľahlivé slovenské informácie o psoch sú ťažko dostupné. Rozhodli sme
+              sa spojiť naše skúsenosti a vytvoriť miesto, kde každý majiteľ nájde
+              odpovede na svoje otázky – od výberu šteniatka až po starostlivosť
+              o staršieho psa.
+            </p>
+
+            <p>
+              Tím Svet Psov tvorí päť zanietených ľudí: veterinárna poradkyňa Marta,
+              kynológ Juraj, výživová poradkyňa Petra, fotograf Milan a redaktorka Jana.
+              Každý z nás má doma aspoň jedného psa a každý deň žije svetom, o ktorom
+              píšeme. Naše rady vychádzajú z osobných skúseností aj odbornej literatúry.
+            </p>
+
+            <p>
+              Veríme, že dobre informovaný majiteľ = šťastný pes. Preto sa snažíme
+              vysvetľovať veci zrozumiteľne, bez zbytočného odborného žargónu.
+              Ak máte otázku alebo námet na článok, neváhajte nás kontaktovať –
+              každá správa nás teší a každá otázka inšpiruje nový obsah.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Obrázok s popisom (figcaption) -->
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-8">
+            <figure class="text-center">
+              <img
+                src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?w=800&q=80"
+                alt="Žena sa hrá so psom v parku"
+                class="img-fluid rounded shadow w-100"
+              />
+              <!-- figcaption = popis obrázka, sémantický HTML prvok -->
+              <figcaption class="mt-2 text-muted fst-italic">
+                Každý pes si zaslúži lásku a starostlivosť – to je naše krédo.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ===== KONIEC HLAVNÉHO TEXTU ===== -->
+
+
+    <!-- ===== ACCORDION – Zaujímavosti o psoch ===== -->
+    <!-- Bootstrap Accordion: kliknúť = rozbaliť/zabaliť -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+
+            <h2 class="sekcia-nadpis text-center mb-4">Zaujímavosti o psoch</h2>
+
+            <div class="accordion" id="psieZaujimavosti">
+
+              <!-- Položka 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#item1">
+                    Koľko plemien psov existuje?
+                  </button>
+                </h2>
+                <div id="item1" class="accordion-collapse collapse show"
+                     data-bs-parent="#psieZaujimavosti">
+                  <div class="accordion-body">
+                    Medzinárodná kynologická federácia (FCI) uznáva viac ako 340 plemien
+                    psov, rozdelených do 10 skupín podľa pôvodu a účelu. Od starodávnych
+                    severských sánnych psov až po moderné teriéry – každé plemeno má
+                    svoju jedinečnú históriu.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Položka 2 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#item2">
+                    Ako dlho žijú psy?
+                  </button>
+                </h2>
+                <div id="item2" class="accordion-collapse collapse"
+                     data-bs-parent="#psieZaujimavosti">
+                  <div class="accordion-body">
+                    Priemerná dĺžka života psa je 10–13 rokov, ale závisí to od
+                    veľkosti a plemena. Malé psy žijú dlhšie (až 18 rokov), veľké
+                    plemená kratšie (6–9 rokov). Rekordérom bol australský pes Bluey,
+                    ktorý sa dožil 29 rokov.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Položka 3 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#item3">
+                    Majú psy farebné videnie?
+                  </button>
+                </h2>
+                <div id="item3" class="accordion-collapse collapse"
+                     data-bs-parent="#psieZaujimavosti">
+                  <div class="accordion-body">
+                    Psy nie sú farboslepé, ale vidia farby inak ako ľudia. Rozoznávajú
+                    modrú a žltú, ale červená a zelená im splývajú do jedného odtieňa
+                    sivožltej. Kompenzujú to výborným pohybovým videním a schopnosťou
+                    vidieť za šera oveľa lepšie ako ľudia.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Položka 4 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#item4">
+                    Prečo psy čuchajú všetko naokolo?
+                  </button>
+                </h2>
+                <div id="item4" class="accordion-collapse collapse"
+                     data-bs-parent="#psieZaujimavosti">
+                  <div class="accordion-body">
+                    Psí nos obsahuje až 300 miliónov čuchových receptorov (ľudia majú
+                    asi 6 miliónov). Čuch je ich primárny zmysel – pes vníma svet
+                    predovšetkým nosom. Preto je prechádzka plná čuchania pre psa
+                    rovnako dôležitá ako fyzický pohyb.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- ===== KONIEC ACCORDION ===== -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-sekcia py-4">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Svet Psov</h6>
+          <p class="small">Váš sprievodca svetom štvornohých priateľov.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Odkazy</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html" class="footer-link">Domov</a></li>
+            <li><a href="o-nas.html" class="footer-link">O nás</a></li>
+            <li><a href="kontakt.html" class="footer-link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Kontakt</h6>
+          <p class="small">
+            <i class="bi bi-envelope me-1"></i>info@svetpsov.sk<br />
+            <i class="bi bi-telephone me-1"></i>+421 900 123 456<br />
+            <i class="bi bi-geo-alt me-1"></i>Hlavná 1, Košice
+          </p>
+        </div>
+      </div>
+      <hr />
+      <p class="text-center small mb-0">&copy; 2025 Svet Psov. Všetky práva vyhradené.</p>
+    </div>
+  </footer>
+  <!-- ===== KONIEC FOOTER ===== -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.text"></script>
+</body>
+</html>
