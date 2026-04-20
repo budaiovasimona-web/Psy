@@ -1,0 +1,128 @@
+/* ===========================================
+   SVET PSOV – JavaScript súbor
+   Všetky interaktívne prvky stránky.
+   Pravidlo: ŽIADNY inline onclick="" v HTML!
+   Používame len addEventListener.
+   =========================================== */
+
+
+/* ===== 1. TMAVÝ REŽIM (DARK MODE) =====
+   Po kliknutí na tlačidlo mesiaca:
+   - Pridá/odoberie triedu "dark" na <body>
+   - Zmení ikonu (mesiac ↔ slnko)
+   - Uloží stav do localStorage (pamätá sa po obnovení stránky)
+   ========================================= */
+
+// Nájdeme tlačidlo pre dark mode (existuje na každej stránke)
+const darkModeBtn = document.getElementById('dark-mode-btn');
+
+// Funkcia: prepnúť tmavý/svetlý režim
+function prepniDarkMode() {
+  // Pridaj alebo odobri triedu "dark" z body
+  document.body.classList.toggle('dark');
+
+  // Zistime, či je teraz dark mode zapnutý
+  const jeDark = document.body.classList.contains('dark');
+
+  // Zmeníme ikonu v tlačidle
+  darkModeBtn.innerHTML = jeDark
+    ? '<i class="bi bi-sun-fill"></i>'   // svetlý režim = slnko
+    : '<i class="bi bi-moon-fill"></i>'; // tmavý režim = mesiac
+
+  // Uložíme stav do localStorage (kľúč: "dark", hodnota: "true"/"false")
+  localStorage.setItem('dark', jeDark);
+}
+
+// Spustíme dark mode na základe uloženého stavu (pri načítaní stránky)
+function nacitajDarkMode() {
+  const ulozenyStav = localStorage.getItem('dark');
+  if (ulozenyStav === 'true') {
+    document.body.classList.add('dark');
+    if (darkModeBtn) {
+      darkModeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    }
+  }
+}
+
+// Pridáme listener – kliknutie na tlačidlo zavolá funkciu prepniDarkMode
+if (darkModeBtn) {
+  darkModeBtn.addEventListener('click', prepniDarkMode);
+}
+
+// Spustíme pri načítaní stránky
+nacitajDarkMode();
+
+
+/* ===== 2. VALIDÁCIA KONTAKTNÉHO FORMULÁRA + TOAST =====
+   Pri odoslaní formulára:
+   1. Skontrolujeme každé povinné pole
+   2. Pridáme triedu "touched" – CSS zobrazí chyby
+   3. Ak je všetko OK → zobrazíme Bootstrap Toast
+   4. Ak nie → formulár sa neodošle, scrollujeme na chybu
+   ========================================= */
+
+// Nájdeme formulár (existuje len na kontakt.html)
+const formular = document.getElementById('kontaktny-formular');
+
+if (formular) { // Spustíme kód len ak formulár existuje
+
+  // Funkcia: pridaj triedu "touched" na pole (aktivuje CSS validáciu)
+  function oznacPole(pole) {
+    pole.classList.add('touched');
+  }
+
+  // Listener: keď používateľ opustí pole (blur), označíme ho
+  formular.querySelectorAll('.form-control, .form-select, .form-check-input')
+    .forEach(function(pole) {
+      pole.addEventListener('blur', function() {
+        oznacPole(pole);
+      });
+    });
+
+  // Listener: odoslanie formulára
+  formular.addEventListener('submit', function(event) {
+    // Zastavíme predvolené odoslanie (reload stránky)
+    event.preventDefault();
+
+    // Označíme všetky polia ako "touched" – zobrazíme prípadné chyby
+    formular.querySelectorAll('.form-control, .form-select, .form-check-input')
+      .forEach(function(pole) {
+        oznacPole(pole);
+      });
+
+    // Skontrolujeme, či je formulár validný (HTML5 checkValidity)
+    const jeValidny = formular.checkValidity();
+
+    if (jeValidny) {
+      // ÚSPECH: zobrazíme Bootstrap Toast
+      zobrazToast();
+      // Vyresetujeme formulár
+      formular.reset();
+      // Odoberieme triedy "touched" zo všetkých polí
+      formular.querySelectorAll('.touched').forEach(function(pole) {
+        pole.classList.remove('touched');
+      });
+    } else {
+      // CHYBA: scrollujeme na prvé nevalidné pole
+      const prveChybne = formular.querySelector(':invalid');
+      if (prveChybne) {
+        prveChybne.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        prveChybne.focus();
+      }
+    }
+  });
+
+  // Funkcia: zobraz Bootstrap Toast notifikáciu
+  function zobrazToast() {
+    // Nájdeme element toastu
+    const toastElement = document.getElementById('uspech-toast');
+    // Vytvoríme Bootstrap Toast objekt
+    const toast = new bootstrap.Toast(toastElement, {
+      delay: 4000 // zobrazí sa 4 sekundy
+    });
+    // Zobrazíme toast
+    toast.show();
+  }
+
+}
+/* ===== KONIEC VALIDÁCIE ===== */
