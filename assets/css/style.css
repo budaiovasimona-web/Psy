@@ -1,0 +1,307 @@
+/* ===========================================
+   SVET PSOV – vlastný CSS súbor
+   =========================================== */
+
+
+/* ===== CSS PREMENNÉ (farebná schéma) =====
+   Definujeme farby na jednom mieste –
+   ak chceme zmeniť farbu, meníme len tu.
+   ========================================= */
+:root {
+  --bs-primary: #8B4513;          /* hnedá – hlavná farba */
+  --bs-primary-rgb: 139, 69, 19;
+  --farba-akcent: #D2691E;        /* tmavšia hnedá */
+  --farba-svetla: #FFF8F0;        /* teplá biela – pozadie */
+  --farba-text: #2c2c2c;          /* tmavosivá – text */
+  --farba-muted: #7a6a5a;         /* stlmená farba */
+  --farba-footer: #3b2a1a;        /* tmavohnedá pre footer */
+  --prechod: 0.3s ease;           /* štandardný čas prechodu */
+}
+
+/* Prepisujeme Bootstrap primárnu farbu */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+  background-color: var(--farba-akcent);
+  border-color: var(--farba-akcent);
+}
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+
+/* ===== ZÁKLADNÉ ŠTÝLY ===== */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--farba-svetla);
+  color: var(--farba-text);
+}
+
+/* Playfair Display pre nadpisy */
+h1, h2, h3, .sekcia-nadpis {
+  font-family: 'Playfair Display', serif;
+}
+
+.sekcia-nadpis {
+  color: var(--bs-primary);
+  margin-bottom: 1rem;
+}
+
+
+/* ===== NAVBAR ===== */
+#hlavna-nav {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#hlavna-nav .navbar-brand {
+  color: var(--bs-primary);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+}
+
+/* Prechod (transition) na nav odkazoch */
+#hlavna-nav .nav-link {
+  color: var(--farba-text);
+  transition: color var(--prechod);
+}
+
+#hlavna-nav .nav-link:hover,
+#hlavna-nav .nav-link.active {
+  color: var(--bs-primary);
+  font-weight: 700;
+}
+
+
+/* ===== HERO SEKCIA ===== */
+.hero-section {
+  /* Obrázok na pozadí */
+  background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;               /* 90% výšky obrazovky */
+  position: relative;
+}
+
+/* Tmavý prekryv cez obrázok – text bude čitateľný */
+.hero-overlay {
+  position: absolute;
+  inset: 0;                       /* skratka pre top/right/bottom/left: 0 */
+  background-color: rgba(0, 0, 0, 0.50);
+}
+
+/* Animácia pre hero nadpis – fadeInDown */
+.hero-nadpis {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 4rem); /* clamp = min, ideál, max veľkosť */
+  animation: fadeInDown 1s ease both;
+}
+
+/* Oneskorená animácia pre podnadpis */
+.hero-podnadpis {
+  font-size: 1.2rem;
+  animation: fadeInDown 1s ease 0.3s both; /* 0.3s oneskorenie */
+}
+
+
+/* ===== @KEYFRAMES ANIMÁCIA =====
+   Definujeme vlastnú animáciu "fadeInDown":
+   prvok príde zhora s efektom objavenia sa.
+   ========================================= */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* začína 30px vyššie */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* skončí na mieste */
+  }
+}
+
+/* Druhá animácia: pulzovanie (pre CTA tlačidlo) */
+@keyframes pulz {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+.cta-sekcia .btn {
+  animation: pulz 2s ease-in-out infinite;
+}
+
+
+/* ===== KARTY – hover efekt ===== */
+/* transition hovorí: animuj zmeny vlastností hladko */
+.karta-hover {
+  transition: transform var(--prechod), box-shadow var(--prechod);
+}
+
+.karta-hover:hover {
+  transform: translateY(-6px);   /* karta sa zdvihne nahor */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
+}
+
+
+/* ===== CAROUSEL ===== */
+.carousel-img {
+  height: 450px;
+  object-fit: cover;
+}
+
+/* Na mobile menšia výška */
+@media (max-width: 768px) {
+  .carousel-img { height: 250px; }
+}
+
+
+/* ===== CTA SEKCIA ===== */
+.cta-sekcia {
+  background: linear-gradient(135deg, var(--bs-primary), var(--farba-akcent));
+}
+
+.cta-nadpis {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+}
+
+
+/* ===== PAGE HEADER (o-nas.html, kontakt.html) ===== */
+.page-header {
+  background: linear-gradient(135deg, var(--bs-primary), var(--farba-akcent));
+}
+
+
+/* ===== FOOTER ===== */
+.footer-sekcia {
+  background-color: var(--farba-footer);
+  color: #ccc;
+}
+
+.footer-sekcia h6 {
+  color: white;
+}
+
+.footer-link {
+  color: #aaa;
+  text-decoration: none;
+  transition: color var(--prechod);
+}
+
+.footer-link:hover {
+  color: var(--farba-akcent);
+}
+
+
+/* ===== KONTAKT BOX (vedľa formulára) ===== */
+.kontakt-box {
+  background-color: white;
+}
+
+.kontakt-box a {
+  color: var(--bs-primary);
+  text-decoration: none;
+}
+
+
+/* ===== CSS VALIDÁCIA FORMULÁRA =====
+   :valid = pole je správne vyplnené
+   :invalid = pole je zle vyplnené
+   Ale zobrazujeme chyby len po pridaní triedy .touched
+   (inak by boli červené hneď pri načítaní stránky)
+   ========================================= */
+
+/* Zelený okraj pre správne vyplnené pole */
+.form-control.touched:valid,
+.form-select.touched:valid {
+  border-color: #198754;          /* Bootstrap success zelená */
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Červený okraj pre nesprávne pole */
+.form-control.touched:invalid,
+.form-select.touched:invalid {
+  border-color: #dc3545;          /* Bootstrap danger červená */
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Focus efekt – modrý outline na aktívnom poli */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+  outline: none;
+}
+
+/* Chybová správa (.invalid-hint) – skrytá predvolene */
+.invalid-hint {
+  display: none;
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* Zobrazí sa, keď je pole .touched a :invalid */
+.form-control.touched:invalid ~ .invalid-hint,
+.form-select.touched:invalid ~ .invalid-hint,
+.form-check-input.touched:invalid ~ .invalid-hint {
+  display: block;
+}
+
+
+/* ===== TMAVÝ REŽIM =====
+   Keď body má triedu "dark", zmenia sa farby.
+   Trieda sa pridáva/odoberá cez JavaScript.
+   ========================================= */
+body.dark {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark #hlavna-nav {
+  background-color: #2a2a2a;
+}
+
+body.dark #hlavna-nav .nav-link,
+body.dark #hlavna-nav .navbar-brand {
+  color: #e0e0e0;
+}
+
+body.dark .card,
+body.dark .kontakt-box,
+body.dark .accordion-item,
+body.dark .accordion-button {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+body.dark .accordion-button:not(.collapsed) {
+  background-color: #3a2a1a;
+  color: #e0e0e0;
+}
+
+body.dark .bg-light {
+  background-color: #222 !important;
+}
+
+body.dark .form-control,
+body.dark .form-select {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+body.dark .footer-sekcia {
+  background-color: #111;
+}
+
+/* Hladký prechod celého body pri zmene témy */
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
