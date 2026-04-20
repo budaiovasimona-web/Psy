@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Svet psov – všetko o starostlivosti, plemenách a výcviku" />
+  <title>Svet Psov</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts: Playfair Display + Lato -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Vlastný CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <!-- Bootstrap responzívna navigácia s hamburger menu na mobile -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="hlavna-nav">
+    <div class="container">
+      <!-- Logo / názov webu -->
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-heart-fill me-1"></i>Svet Psov
+      </a>
+
+      <!-- Hamburger tlačidlo (viditeľné len na mobile) -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigačné odkazy -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Domov</a></li>
+          <li class="nav-item"><a class="nav-link" href="o-nas.html">O nás</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+          <!-- Tlačidlo pre tmavý režim -->
+          <li class="nav-item">
+            <button class="btn btn-outline-secondary btn-sm ms-2" id="dark-mode-btn">
+              <i class="bi bi-moon-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ===== KONIEC NAVBAR ===== -->
+
+
+  <main>
+
+    <!-- ===== HERO SEKCIA ===== -->
+    <!-- Veľká úvodná sekcia s obrázkom na pozadí -->
+    <section class="hero-section d-flex align-items-center">
+      <div class="hero-overlay"></div>
+      <div class="container position-relative text-white text-center">
+        <h1 class="hero-nadpis">Vitajte vo svete psov</h1>
+        <p class="hero-podnadpis">Váš spoľahlivý sprievodca starostlivosťou, výcvikom a životom so psím priateľom</p>
+        <a href="#o-teme" class="btn btn-primary btn-lg mt-3">Zistiť viac</a>
+      </div>
+    </section>
+    <!-- ===== KONIEC HERO ===== -->
+
+
+    <!-- ===== SEKCIA: O TÉME ===== -->
+    <section class="py-5" id="o-teme">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <!-- Text – ľavá strana -->
+          <div class="col-md-6">
+            <h2 class="sekcia-nadpis">Prečo sú psy najlepší priatelia?</h2>
+            <p>
+              Psy sprevádzajú ľudstvo viac ako 15 000 rokov. Počas tohto obdobia sa vyvinuli
+              do neuveriteľne rozmanitých plemien – od miniatúrnych čivav až po obrovské
+              dogy. Každé plemeno má svoje vlastnosti, povahu a potreby, ktoré je dôležité
+              poznať pred tým, ako si psa obstaráte.
+            </p>
+            <p>
+              Starostlivosť o psa si vyžaduje čas, trpezlivosť a lásku. Správna výživa,
+              pravidelný pohyb a veterinárna starostlivosť sú základom šťastného a zdravého
+              života vášho štvornohého priateľa. Na tomto webe nájdete praktické rady
+              pre začínajúcich aj skúsených majiteľov psov.
+            </p>
+            <a href="o-nas.html" class="btn btn-outline-primary mt-2">Viac o nás</a>
+          </div>
+
+          <!-- Obrázok – pravá strana -->
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=700&q=80"
+              alt="Dva psy behajú na lúke"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===== KONIEC O TÉME ===== -->
+
+
+    <!-- ===== SEKCIA: KARTY ===== -->
+    <section class="py-5 bg-light" id="karty">
+      <div class="container">
+        <h2 class="text-center sekcia-nadpis mb-5">Populárne témy</h2>
+
+        <!-- Bootstrap Grid: 1 stĺpec na mobile, 2 na tablete, 3 na deskope -->
+        <div class="row g-4">
+
+          <!-- Karta 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow karta-hover">
+              <!-- ratio-16x9 = pomer strán obrázka -->
+              <div class="ratio ratio-16x9">
+                <img
+                  src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80"
+                  alt="Zlatý labrador"
+                  class="card-img-top object-fit-cover"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Výživa psa</h5>
+                <p class="card-text">
+                  Správna strava je základom zdravia každého psa. Psie telo potrebuje
+                  vyvážený pomer bielkovín, tukov a sacharidov. Kvalitné granule alebo
+                  surová strava BARF sú obľúbené možnosti medzi majiteľmi.
+                </p>
+              </div>
+              <!-- Tlačidlo otvára Bootstrap Modal -->
+              <div class="card-footer">
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVyziva">
+                  Čítať viac
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Karta 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow karta-hover">
+              <div class="ratio ratio-16x9">
+                <img
+                  src="assets/images/photo2.png"
+                  alt="Zlatý retriever"
+                  class="card-img-top object-fit-cover"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Výcvik a poslušnosť</h5>
+                <p class="card-text">
+                  Dobre vycvičený pes je radosťou pre celú rodinu. Základné povely ako
+                  „sedieť", „ľahnúť" a „zostaň" by mal vedieť každý pes. Pozitívna
+                  motivácia pomocou odmien funguje oveľa lepšie ako trestanie.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a href="o-nas.html" class="btn btn-primary btn-sm">Čítať viac</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Karta 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow karta-hover">
+              <div class="ratio ratio-16x9">
+                <img
+                  src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&q=80"
+                  alt="Corgi pes"
+                  class="card-img-top object-fit-cover"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Zdravie a veterinár</h5>
+                <p class="card-text">
+                  Pravidelné návštevy veterinára pomáhajú predchádzať chorobám.
+                  Očkovanie, odčervenie a ochrana pred blchami sú povinnou súčasťou
+                  starostlivosti. Zdravý pes je šťastný pes.
+                </p>
+              </div>
+              <div class="card-footer">
+                <a href="kontakt.html" class="btn btn-primary btn-sm">Kontakt</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===== KONIEC KARTY ===== -->
+
+
+    <!-- ===== BOOTSTRAP MODAL – Výživa ===== -->
+    <!-- Otvára sa po kliknutí na "Čítať viac" na karte Výživa -->
+    <div class="modal fade" id="modalVyziva" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Výživa psa</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>Psí organizmus potrebuje denne dostatok kvalitných bielkovín (mäso, ryby),
+            zdravé tuky a vitamíny. Vyhýbajte sa krmivám s vysokým obsahom obilia
+            a umelých prísad.</p>
+            <p>Množstvo potravy závisí od hmotnosti, veku a aktivity psa. Šteňatá jedia
+            3–4 krát denne, dospelé psy 1–2 krát denne.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavrieť</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ===== KONIEC MODAL ===== -->
+
+
+    <!-- ===== CAROUSEL – Galéria ===== -->
+    <!-- Bootstrap Carousel s 4 obrázkami -->
+    <section class="py-5" id="galeria">
+      <div class="container">
+        <h2 class="text-center sekcia-nadpis mb-4">Galéria</h2>
+
+        <div id="psiaGaleria" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- Indikátory (bodky dole) -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#psiaGaleria" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#psiaGaleria" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#psiaGaleria" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#psiaGaleria" data-bs-slide-to="3"></button>
+          </div>
+
+          <!-- Obrázky -->
+          <div class="carousel-inner rounded shadow">
+            <div class="carousel-item active">
+              <img src="assets/images/photo.png"
+                   alt="Border kólia v prírode" class="d-block w-100 carousel-img" />
+              <div class="carousel-caption">
+                <h5>Border kólia</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/photo3.png"
+                   alt="Pudlík" class="d-block w-100 carousel-img" />
+              <div class="carousel-caption">
+                <h5>Pudlík</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1000&q=80"
+                   alt="Corgi pes" class="d-block w-100 carousel-img" />
+              <div class="carousel-caption">
+                <h5>Welsh Corgi</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/photo4.png"
+                   alt="Pes na prechádzkе" class="d-block w-100 carousel-img" />
+              <div class="carousel-caption">
+                <h5>Prechádzka s psom</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Šípky -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#psiaGaleria" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#psiaGaleria" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+    <!-- ===== KONIEC CAROUSEL ===== -->
+
+
+    <!-- ===== CALL TO ACTION ===== -->
+    <section class="cta-sekcia py-5 text-white text-center">
+      <div class="container">
+        <h2 class="cta-nadpis">Máte otázku o svojom psíkovi?</h2>
+        <p class="lead mb-4">Napíšte nám – radi poradíme každému majiteľovi psa</p>
+        <a href="kontakt.html" class="btn btn-light btn-lg">Kontaktovať nás</a>
+      </div>
+    </section>
+    <!-- ===== KONIEC CTA ===== -->
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-sekcia py-4">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Svet Psov</h6>
+          <p class="small">Váš sprievodca svetom štvornohých priateľov.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Odkazy</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html" class="footer-link">Domov</a></li>
+            <li><a href="o-nas.html" class="footer-link">O nás</a></li>
+            <li><a href="kontakt.html" class="footer-link">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Kontakt</h6>
+          <p class="small">
+            <i class="bi bi-envelope me-1"></i>info@svetpsov.sk<br />
+            <i class="bi bi-telephone me-1"></i>+421 900 123 456<br />
+            <i class="bi bi-geo-alt me-1"></i>Hlavná 1, Košice
+          </p>
+        </div>
+      </div>
+      <hr />
+      <p class="text-center small mb-0">&copy; 2025 Svet Psov. Všetky práva vyhradené.</p>
+    </div>
+  </footer>
+  <!-- ===== KONIEC FOOTER ===== -->
+
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Vlastný JavaScript -->
+  <script src="assets/js/script.text"></script>
+</body>
+</html>
