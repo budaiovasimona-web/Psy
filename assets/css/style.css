@@ -82,11 +82,11 @@ h1, h2, h3, .sekcia-nadpis {
 
 /* ===== HERO SEKCIA ===== */
 .hero-section {
-  /* Obrázok na pozadí */
-  background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=80');
+  background-image: url("../images/photo5.png");
   background-size: cover;
   background-position: center;
-  min-height: 90vh;               /* 90% výšky obrazovky */
+  background-repeat: no-repeat;
+  min-height: 90vh;
   position: relative;
 }
 
@@ -151,13 +151,15 @@ h1, h2, h3, .sekcia-nadpis {
 
 /* ===== CAROUSEL ===== */
 .carousel-img {
-  height: 450px;
+  width: 100%;
+  height: 500px;
   object-fit: cover;
+  object-position: center 25%;
 }
 
 /* Na mobile menšia výška */
 @media (max-width: 768px) {
-  .carousel-img { height: 250px; }
+  .carousel-img { height: 280px; }
 }
 
 
@@ -304,4 +306,19 @@ body.dark .footer-sekcia {
 /* Hladký prechod celého body pri zmene témy */
 body {
   transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Modal v tmavom režime */
+body.dark .modal-content {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+body.dark .modal-header,
+body.dark .modal-footer {
+  border-color: #555;
+}
+
+body.dark .btn-close {
+  filter: invert(1);
 }
