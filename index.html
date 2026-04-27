@@ -119,7 +119,7 @@
               <div class="ratio ratio-16x9">
                 <img
                   src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80"
-                  alt="Zlatý labrador"
+                  alt="Border kólia"
                   class="card-img-top object-fit-cover"
                 />
               </div>
@@ -158,8 +158,10 @@
                   motivácia pomocou odmien funguje oveľa lepšie ako trestanie.
                 </p>
               </div>
+              <!-- Tlačidlo otvára Bootstrap Modal -->
               <div class="card-footer">
-                <a href="o-nas.html" class="btn btn-primary btn-sm">Čítať viac</a>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalVycvik">Čítať viac
+              </button>
               </div>
             </div>
           </div>
@@ -182,8 +184,10 @@
                   starostlivosti. Zdravý pes je šťastný pes.
                 </p>
               </div>
+             <!-- Tlačidlo otvára Bootstrap Modal -->
               <div class="card-footer">
-                <a href="kontakt.html" class="btn btn-primary btn-sm">Kontakt</a>
+               <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalZdravie">Čítať viac
+              </button> 
               </div>
             </div>
           </div>
@@ -216,6 +220,47 @@
         </div>
       </div>
     </div>
+
+    <!-- ===== MODAL – Výcvik ===== -->
+<div class="modal fade" id="modalVycvik" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Výcvik a poslušnosť</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Najlepšie výsledky dosiahnete krátkymi tréningami 10–15 minút denne. Psa vždy chváľte a odmeňujte za správne správanie. Trpezlivosť je základ úspechu.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Zavrieť
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL – Zdravie ===== -->
+<div class="modal fade" id="modalZdravie" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Zdravie a veterinár</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Pes by mal absolvovať pravidelné preventívne prehliadky aspoň raz ročne. Nezabúdajte na očkovanie, odčervenie a ochranu proti kliešťom a blchám.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Zavrieť
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- ===== KONIEC MODAL ===== -->
 
 
@@ -252,7 +297,7 @@
               </div>
             </div>
             <div class="carousel-item">
-              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1000&q=80"
+              <img src="assets/images/photo6.png"
                    alt="Corgi pes" class="d-block w-100 carousel-img" />
               <div class="carousel-caption">
                 <h5>Welsh Corgi</h5>
